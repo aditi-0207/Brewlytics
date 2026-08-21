@@ -1,0 +1,160 @@
+.scroll-story {
+  position: relative;
+}
+
+.scroll-panel {
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+  min-height: 700px;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  border-radius: 28px 28px 0 0;
+}
+
+/* 01 — Warm White */
+.panel-dark {
+  background: var(--warm-white);
+  color: var(--espresso);
+}
+
+/* 02 — Cream */
+.panel-light {
+  background: var(--cream);
+  color: var(--espresso);
+}
+
+/* 03 — Light Tan */
+.panel-coffee {
+  background: var(--latte);
+  color: var(--espresso);
+}
+
+.panel-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1100px, 90%);
+}
+
+.eyebrow {
+  margin-bottom: 28px;
+
+  color: var(--caramel);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.panel-content h1 {
+  max-width: 900px;
+
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(4rem, 9vw, 9rem);
+  font-weight: 500;
+
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.panel-content h1 span {
+  color: var(--tan);
+}
+
+.panel-description {
+  max-width: 520px;
+
+  margin-top: 40px;
+
+  color: var(--text-secondary);
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Subtle grid */
+.grid-background {
+  position: absolute;
+  inset: 0;
+
+  opacity: 1;
+
+  background-image:
+    linear-gradient(
+      rgba(184, 138, 98, 0.10) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(184, 138, 98, 0.10) 1px,
+      transparent 1px
+    );
+
+  background-size: 54px 54px;
+
+  mask-image: radial-gradient(
+    ellipse 65% 60% at 50% 0%,
+    black 35%,
+    transparent 100%
+  );
+}
+
+.light-grid {
+  background-image:
+    linear-gradient(
+      rgba(184, 138, 98, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(184, 138, 98, 0.08) 1px,
+      transparent 1px
+    );
+}
+
+.story-button {
+  margin-top: 40px;
+
+  padding: 16px 26px;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  background: var(--white);
+  color: var(--espresso);
+
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.story-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 30px rgba(51, 40, 32, 0.10);
+}
+
+@media (max-width: 700px) {
+  .scroll-panel {
+    min-height: 600px;
+  }
+
+  .panel-content h1 {
+    font-size: clamp(3.5rem, 16vw, 6rem);
+  }
+
+  .panel-description {
+    font-size: 0.95rem;
+  }
+}
