@@ -27,17 +27,19 @@ function Hero() {
 
         <div className="hero-actions">
 
-          <button className="hero-primary">
-            Analyze My Café
-            <span>→</span>
-          </button>
+        <button
+        className="hero-secondary"
+        onClick={() =>
+        document.querySelector('.scroll-story')?.scrollIntoView({
+        behavior: 'smooth',
+        })
+      }
+  >
+    See how it works
+    <span>↓</span>
+  </button>
 
-          <button className="hero-secondary">
-            Explore Brewlytics
-            <span>↓</span>
-          </button>
-
-        </div>
+</div>
 
       </div>
 
@@ -96,11 +98,6 @@ function Hero() {
           <small>Medium competition</small>
         </div>
 
-      </div>
-
-      <div className="hero-scroll">
-        <span>Scroll to explore</span>
-        <div className="scroll-line"></div>
       </div>
 
     </section>
