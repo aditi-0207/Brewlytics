@@ -1,10 +1,14 @@
 export const analysisSteps = [
+  /* =========================
+     01 — LOCATION
+  ========================= */
+
   {
     id: 'location',
     number: '01',
     title: 'Location',
 
-    heading: 'Where will your café live?',
+    heading: 'Choose Your Café’s Corner',
 
     description:
       "Location affects rent, customer demand and competition. Tell us where you're planning to open.",
@@ -69,8 +73,12 @@ export const analysisSteps = [
         suggestions: [
           'Starbucks',
           'Third Wave Coffee',
+          'Chaayos',
           'Blue Tokai',
+          'Chelvies Coffee',
           'The Coffee House',
+          'Costa Coffee',
+          'Chai Point',
           'Café Coffee Day',
           'Barista',
         ],
@@ -79,153 +87,648 @@ export const analysisSteps = [
   },
 
 
-    {
-  id: 'cafeSetup',
-  number: '02',
-  title: 'Café Setup',
+  /* =========================
+     02 — CAFÉ SETUP
+  ========================= */
 
-  heading: 'What will your café look like?',
+  {
+    id: 'cafeSetup',
+    number: '02',
+    title: 'Café Setup',
 
-  description:
-    'Define the format, size and operating pattern of your café.',
+    heading: 'How Much Room for the Brew?',
 
-  fields: [
-    {
-      id: 'cafeType',
-      number: '01',
-      label: 'Café Type',
-      type: 'select',
+    description:
+      'Define the format, size and operating pattern of your café.',
 
-      description:
-        'What kind of café are you planning to operate?',
+    fields: [
+      {
+        id: 'cafeType',
+        number: '01',
+        label: 'Café Type',
+        type: 'select',
 
-      placeholder: 'Select café type',
+        description:
+          'What kind of café are you planning to operate?',
 
-      options: [
-        'Coffee-focused café',
-        'Casual café',
-        'Premium café',
-        'Café + bakery',
-        'Café + restaurant',
-      ],
-    },
+        placeholder: 'Select café type',
 
-    {
-      id: 'spaceSize',
-      number: '02',
-      label: 'Café Size',
-      type: 'number',
+        options: [
+          'Coffee-focused café',
+          'Casual café',
+          'Premium café',
+          'Café + bakery',
+          'Café + restaurant',
+          'Café + co-working space',
+          'Bookcafé',
+          'Pet café',
+          'Themed café', 
+        ],
+      },
 
-      description:
-        'How much space will your café occupy?',
+      {
+        id: 'spaceSize',
+        number: '02',
+        label: 'Café Size',
+        type: 'number',
 
-      placeholder: 'e.g. 1000',
+        description:
+          'How much space will your café occupy?',
 
-      unit: 'sq. ft.',
-    },
+        placeholder: 'e.g. 1000',
 
-    {
-      id: 'seatingCapacity',
-      number: '03',
-      label: 'Seating Capacity',
-      type: 'number',
+        unit: 'sq. ft.',
+      },
 
-      description:
-        'How many customers can your café seat at one time?',
+      {
+        id: 'seatingCapacity',
+        number: '03',
+        label: 'Seating Capacity',
+        type: 'number',
 
-      placeholder: 'e.g. 40',
+        description:
+          'How many customers can your café seat at one time?',
 
-      unit: 'seats',
-    },
+        placeholder: 'e.g. 40',
 
-    {
-      id: 'operatingHours',
-      number: '04',
-      label: 'Operating Hours',
-      type: 'time-range',
+        unit: 'seats',
+      },
 
-      description:
-        'How long will your café operate each day?',
-    },
+      {
+        id: 'operatingHours',
+        number: '04',
+        label: 'Operating Hours',
+        type: 'time-range',
 
-    {
-      id: 'operatingDays',
-      number: '05',
-      label: 'Operating Days',
-      type: 'number',
+        description:
+          'How long will your café operate each day?',
+      },
 
-      description:
-        'How many days will your café operate each month?',
+      {
+        id: 'operatingDays',
+        number: '05',
+        label: 'Operating Days',
+        type: 'number',
 
-      placeholder: 'e.g. 30',
+        description:
+          'How many days will your café operate each month?',
 
-      unit: 'days / month',
-    },
-  ],
-},
+        placeholder: 'e.g. 30',
+
+        unit: 'days / month',
+      },
+    ],
+  },
+
+
+  /* =========================
+     03 — STAFF
+  ========================= */
 
   {
     id: 'staff',
     number: '03',
     title: 'Staff',
 
-    heading: 'Who will run your café?',
+    heading: 'Who’s Brewing the Magic?',
 
     description:
-      'Estimate the people required to operate your café.',
+      'Estimate the people and payroll required to operate your café.',
 
-    fields: [],
+    fields: [
+      {
+        id: 'employeeCount',
+        number: '01',
+        label: 'Number of Employees',
+        type: 'number',
+
+        description:
+          'How many people will work at your café?',
+
+        placeholder: 'e.g. 8',
+
+        unit: 'employees',
+      },
+
+      {
+        id: 'averageSalary',
+        number: '02',
+        label: 'Average Monthly Salary',
+        type: 'currency',
+
+        description:
+          'What is the average monthly salary per employee?',
+
+        placeholder: 'e.g. 18000',
+      },
+
+      {
+        id: 'ownerOperated',
+        number: '03',
+        label: 'Owner-Operated',
+        type: 'select',
+
+        description:
+          'Will you personally be involved in operating the café?',
+
+        placeholder: 'Select an option',
+
+        options: [
+          'Yes',
+          'No',
+        ],
+      },
+
+      {
+        id: 'managerRequired',
+        number: '04',
+        label: 'Manager Required',
+        type: 'select',
+
+        description:
+          'Will you need a dedicated manager to run the café?',
+
+        placeholder: 'Select an option',
+
+        options: [
+          'Yes',
+          'No',
+        ],
+      },
+    ],
   },
 
-  {
-    id: 'menuPricing',
-    number: '04',
-    title: 'Menu & Pricing',
 
-    heading: 'What will you sell?',
+  /* =========================
+   04 — MENU & PRICING
+========================= */
 
-    description:
-      'Define your menu and pricing strategy.',
+{
+  id: 'menuPricing',
+  number: '04',
+  title: 'Menu & Pricing',
 
-    fields: [],
-  },
+  heading: 'What’s Your Café’s Lineup?',
 
-  {
-    id: 'equipment',
-    number: '05',
-    title: 'Equipment',
+  description:
+    'Define your pricing, expected customer volume and menu economics.',
 
-    heading: 'What will you need?',
+  fields: [
+    {
+      id: 'averageOrderValue',
+      number: '01',
+      label: 'Average Order Value',
+      type: 'currency',
 
-    description:
-      'Estimate your equipment requirements and costs.',
+      description:
+        'How much do you expect the average customer to spend per visit?',
 
-    fields: [],
-  },
+      placeholder: 'e.g. 350',
+    },
 
-  {
-    id: 'operatingCosts',
-    number: '06',
-    title: 'Operating Costs',
+    {
+      id: 'customersPerDay',
+      number: '02',
+      label: 'Expected Customers / Day',
+      type: 'number',
 
-    heading: 'What will it cost to operate?',
+      description:
+        'How many customers do you expect to serve on a typical day?',
 
-    description:
-      'Estimate your recurring monthly expenses.',
+      placeholder: 'e.g. 100',
 
-    fields: [],
-  },
+      unit: 'customers / day',
+    },
 
-  {
-    id: 'market',
-    number: '07',
-    title: 'Market',
+    {
+      id: 'foodBeverageMix',
+      number: '03',
+      label: 'Food & Beverage Mix',
+      type: 'select',
 
-    heading: 'How strong is your market?',
+      description:
+        'How would you describe the balance between food and beverage sales?',
 
-    description:
-      'Understand demand and competitive pressure.',
+      placeholder: 'Select sales mix',
 
-    fields: [],
-  },
+      options: [
+        'Mostly beverages',
+        'More beverages than food',
+        'Balanced',
+        'More food than beverages',
+        'Mostly food',
+      ],
+    },
+
+    {
+      id: 'foodCostPercentage',
+      number: '04',
+      label: 'Average Food Cost',
+      type: 'number',
+
+      description:
+        'Approximately what percentage of your selling price goes toward ingredients and raw materials?',
+
+      placeholder: 'e.g. 30',
+
+      unit: '% of sales',
+    },
+
+    {
+      id: 'menuPositioning',
+      number: '05',
+      label: 'Menu Positioning',
+      type: 'select',
+
+      description:
+        'What price segment are you targeting with your menu?',
+
+      placeholder: 'Select positioning',
+
+      options: [
+        'Budget',
+        'Mid-range',
+        'Premium',
+        'Luxury',
+      ],
+    },
+
+    {
+      id: 'deliverySales',
+      number: '06',
+      label: 'Delivery / Online Sales',
+      type: 'select',
+
+      description:
+        'Will your café offer delivery or online ordering?',
+
+      placeholder: 'Select an option',
+
+      options: [
+        'No delivery',
+        'Yes — small share of sales',
+        'Yes — significant share of sales',
+      ],
+    },
+
+    {
+      id: 'peakHours',
+      number: '07',
+      label: 'Peak Hours',
+      type: 'select',
+
+      description:
+        'When do you expect your café to receive the most customers?',
+
+      placeholder: 'Select peak period',
+
+      options: [
+        'Morning',
+        'Afternoon',
+        'Evening',
+        'Throughout the day',
+      ],
+    },
+  ],
+},
+
+
+/* =========================
+   05 — EQUIPMENT
+========================= */
+
+{
+  id: 'equipment',
+  number: '05',
+  title: 'Equipment',
+
+  heading: 'What Goes Into the Setup?',
+
+  description:
+    'Estimate the one-time investment needed to build and equip your café.',
+
+  fields: [
+    {
+      id: 'coffeeEquipment',
+      number: '01',
+      label: 'Coffee Equipment',
+      type: 'currency',
+
+      description:
+        'How much do you expect to spend on espresso machines, grinders, brewers and other coffee equipment?',
+
+      placeholder: 'e.g. 300000',
+    },
+
+    {
+      id: 'kitchenEquipment',
+      number: '02',
+      label: 'Kitchen Equipment',
+      type: 'currency',
+
+      description:
+        'Estimate the cost of ovens, refrigerators, freezers and other kitchen equipment.',
+
+      placeholder: 'e.g. 250000',
+    },
+
+    {
+      id: 'furnitureSeating',
+      number: '03',
+      label: 'Furniture & Seating',
+      type: 'currency',
+
+      description:
+        'How much will you spend on tables, chairs, counters and other furniture?',
+
+      placeholder: 'e.g. 200000',
+    },
+
+    {
+      id: 'interiorDecor',
+      number: '04',
+      label: 'Interior & Décor',
+      type: 'currency',
+
+      description:
+        'Estimate your interior fit-out, lighting, décor and other design costs.',
+
+      placeholder: 'e.g. 500000',
+    },
+
+    {
+      id: 'posTechnology',
+      number: '05',
+      label: 'POS & Technology',
+      type: 'currency',
+
+      description:
+        'Estimate the cost of POS hardware, billing systems, networking and other technology.',
+
+      placeholder: 'e.g. 75000',
+    },
+
+    {
+      id: 'otherSetupCosts',
+      number: '06',
+      label: 'Other Setup Costs',
+      type: 'currency',
+
+      description:
+        'Add any other one-time setup costs not covered above.',
+
+      placeholder: 'e.g. 50000',
+    },
+  ],
+},
+
+
+ /* =========================
+   06 — OPERATING COSTS
+========================= */
+
+{
+  id: 'operatingCosts',
+  number: '06',
+  title: 'Operating Costs',
+
+  heading: 'Who’s Your Café Crowd?',
+
+  description:
+    'Estimate the recurring monthly expenses needed to keep your café running.',
+
+  fields: [
+    {
+      id: 'rawMaterials',
+      number: '01',
+      label: 'Raw Materials / Ingredients',
+      type: 'currency',
+
+      description:
+        'How much do you expect to spend each month on coffee, food ingredients, packaging and other consumables?',
+
+      placeholder: 'e.g. 100000',
+    },
+
+    {
+      id: 'utilities',
+      number: '02',
+      label: 'Utilities',
+      type: 'currency',
+
+      description:
+        'Estimate your monthly electricity, gas, water and other utility expenses.',
+
+      placeholder: 'e.g. 30000',
+    },
+
+    {
+      id: 'marketing',
+      number: '03',
+      label: 'Marketing',
+      type: 'currency',
+
+      description:
+        'How much do you plan to spend each month on advertising, social media and promotions?',
+
+      placeholder: 'e.g. 20000',
+    },
+
+    {
+      id: 'deliveryFees',
+      number: '04',
+      label: 'Delivery / Platform Fees',
+      type: 'currency',
+
+      description:
+        'Estimate monthly commissions and fees paid to delivery or ordering platforms.',
+
+      placeholder: 'e.g. 15000',
+    },
+
+    {
+      id: 'softwareSubscriptions',
+      number: '05',
+      label: 'Software & Subscriptions',
+      type: 'currency',
+
+      description:
+        'Estimate recurring costs for POS, accounting, inventory and other software subscriptions.',
+
+      placeholder: 'e.g. 5000',
+    },
+
+    {
+      id: 'maintenance',
+      number: '06',
+      label: 'Maintenance',
+      type: 'currency',
+
+      description:
+        'Estimate monthly equipment, furniture and property maintenance costs.',
+
+      placeholder: 'e.g. 10000',
+    },
+
+    {
+      id: 'miscellaneous',
+      number: '07',
+      label: 'Miscellaneous',
+      type: 'currency',
+
+      description:
+        'Allow for smaller recurring expenses that do not fit into another category.',
+
+      placeholder: 'e.g. 10000',
+    },
+
+    {
+      id: 'otherMonthlyCosts',
+      number: '08',
+      label: 'Other Monthly Costs',
+      type: 'currency',
+
+      description:
+        'Add any other recurring monthly costs not covered above.',
+
+      placeholder: 'e.g. 5000',
+    },
+  ],
+},
+
+/* =========================
+   07 — MARKET
+========================= */
+
+{
+  id: 'market',
+  number: '07',
+  title: 'Market',
+
+  heading: 'Who are you brewing for?',
+
+  description:
+    'Define your target audience and expectations for the local market.',
+
+  fields: [
+    {
+      id: 'targetCustomer',
+      number: '01',
+      label: 'Target Customer',
+      type: 'select',
+
+      description:
+        'Who do you expect to be the primary customers of your café?',
+
+      placeholder: 'Select target customer',
+
+      options: [
+        'Students',
+        'Young professionals',
+        'Families',
+        'Remote workers',
+        'Tourists',
+        'Mixed audience',
+      ],
+    },
+
+    {
+      id: 'cafePositioning',
+      number: '02',
+      label: 'Café Positioning',
+      type: 'select',
+
+      description:
+        'How do you want your café to be perceived in the market?',
+
+      placeholder: 'Select positioning',
+
+      options: [
+        'Affordable & casual',
+        'Trendy & social',
+        'Premium & refined',
+        'Specialty coffee',
+        'Experience-focused',
+      ],
+    },
+
+    {
+      id: 'expectedDemand',
+      number: '03',
+      label: 'Expected Demand',
+      type: 'select',
+
+      description:
+        'How strong do you expect customer demand to be in your chosen area?',
+
+      placeholder: 'Select expected demand',
+
+      options: [
+        'Low',
+        'Moderate',
+        'High',
+        'Very high',
+      ],
+    },
+
+    {
+      id: 'marketFamiliarity',
+      number: '04',
+      label: 'Market Familiarity',
+      type: 'select',
+
+      description:
+        'How familiar are you with the café market in this area?',
+
+      placeholder: 'Select familiarity',
+
+      options: [
+        'New to the market',
+        'Somewhat familiar',
+        'Very familiar',
+        'Already operate a business here',
+      ],
+    },
+
+    {
+      id: 'competitivePressure',
+      number: '05',
+      label: 'Competitive Pressure',
+      type: 'select',
+
+      description:
+        'How competitive do you believe the café market is in your chosen area?',
+
+      placeholder: 'Select competition level',
+
+      options: [
+        'Low',
+        'Moderate',
+        'High',
+        'Very high',
+      ],
+    },
+
+    {
+      id: 'growthExpectation',
+      number: '06',
+      label: 'Growth Expectation',
+      type: 'select',
+
+      description:
+        'How much growth do you expect your café to achieve after establishing itself?',
+
+      placeholder: 'Select growth expectation',
+
+      options: [
+        'Conservative',
+        'Moderate',
+        'Strong',
+        'Aggressive',
+      ],
+    },
+  ],
+},
+
+
 ]
