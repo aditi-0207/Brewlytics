@@ -171,7 +171,13 @@ function ScrollStory() {
               Turn your café plan into a data-backed decision.
             </p>
 
-            <button className="verdict-button">
+            <button 
+                type="button"
+                className="verdict-button"
+                onClick={() => {
+                  window.location.hash = 'analyze'
+            }}
+            >
               Analyze My Café
               <span>→</span>
             </button>

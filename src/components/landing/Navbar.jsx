@@ -32,10 +32,10 @@ function Navbar() {
         </a>
       </div>
 
-      <button className="navbar-cta">
+      <a href="#analyze" className="navbar-cta">
         Analyze My Café
         <span>→</span>
-      </button>
+      </a>
     </nav>
   )
 }
